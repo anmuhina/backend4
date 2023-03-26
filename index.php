@@ -98,5 +98,5 @@ catch(PDOException $e) {
 }
 //}
 
-//header('Location: ?save=1');
-header('Location: http://u52811.kubsu-dev.ru/backend3/files/file1.html');
+header('Location: ?save=1');
+//header('Location: http://u52811.kubsu-dev.ru/backend3/files/file1.html');
