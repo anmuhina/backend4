@@ -1,7 +1,7 @@
 <head>
         <link rel="stylesheet" href="style.css">
 </head> 
-<body> 
+//<body> 
         
 <?php
 if (!empty($messages)) {
@@ -82,4 +82,4 @@ if (!empty($messages)) {
     <label><input id="data" type="checkbox" name="informed">С контрактом ознакомлен(а)</label><br>
     <input id="sub" type="submit" value="Отправить">
   </form>
-</body>
+//</body>
