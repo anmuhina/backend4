@@ -187,7 +187,7 @@ try {
     {$stmt -> execute([$app_id, 10]);}
     else if ($ability=='Прохождение сквозь стены')
     {$stmt -> execute([$app_id, 20]);}
-    else if ($ability=='Бессмертие')
+    else if ($ability=='Левитация')
     {$stmt -> execute([$app_id, 30]);}
   }
 }
