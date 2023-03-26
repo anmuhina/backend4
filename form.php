@@ -35,6 +35,8 @@ if (!empty($messages)) {
                  }
                  else {
                          printf('<option value="%d">%d год</option>', $birthdate, $birthdate);
+                         for ($i = 1922; $i <= 2022; $i++) {
+                            printf('<option value="%d">%d год</option>', $i, $i);
                          }
          ?>
         </select>
