@@ -15,10 +15,6 @@ if (empty($_POST['name'])) {
   $errors = TRUE;
 }
 
-//if (empty($_POST['birth_date'])) {
-  //print('Введите дату рождения.<br/>');
-  //$errors = TRUE;
-//}
 if (empty($_POST['birth_date']) || !is_numeric($_POST['birth_date']) || !preg_match('/^\d+$/', $_POST['birth_date'])) {
   print('Заполните год.<br/>');
   $errors = TRUE;
@@ -39,7 +35,7 @@ if (empty($_POST['amount_of_limbs']) || !is_numeric($_POST['amount_of_limbs']) |
   $errors = TRUE;
 }
 
-if (empty($_POST['abilities'])) {
+if (empty($_POST['abilities']) || !($_POST['abilities']=='Бессмертие' || $_POST['abilities']=='Прохождение сквозь стены' || $_POST['abilities']=='Левитация')) {
   print('Выберите сверхспособности.<br/>');
   $errors = TRUE;
 }
@@ -87,9 +83,6 @@ catch (PDOException $e) {
 try {
   $stmt = $db->prepare("INSERT INTO link SET app_id = ?, ab_id = ?");
   foreach ($_POST['abilities'] as $ability) {
-  //try {
-  //$stmt = $db->prepare("INSERT INTO link SET app_id = ?, ab_id = ?");
-    
     if ($ability=='Бессмертие')
     {$stmt -> execute([$app_id, 10]);}
     else if ($ability=='Прохождение сквозь стены')
