@@ -1,7 +1,7 @@
 <head>
         <link rel="stylesheet" href="style.css">
 </head> 
-//<body> 
+<body> 
         
 <?php
 if (!empty($messages)) {
@@ -35,9 +35,10 @@ if (!empty($messages)) {
                  }
                  else {
                          printf('<option value="%d">%d год</option>', $birthdate, $birthdate);
-                         //for ($i = 1922; $i <= 2022; $i++) {
-                            //printf('<option value="%d">%d год</option>', $i, $i);
-                         //}
+                         for ($i = 1922; $i <= 2022; $i++) {
+                            printf('<option value="%d">%d год</option>', $i, $i);
+                         }
+                 }
          ?>
         </select>
     </label><br>
@@ -82,4 +83,4 @@ if (!empty($messages)) {
     <label><input id="data" type="checkbox" name="informed">С контрактом ознакомлен(а)</label><br>
     <input id="sub" type="submit" value="Отправить">
   </form>
-//</body>
+</body>
