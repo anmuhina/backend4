@@ -26,6 +26,9 @@ body {
     margin-top: 10px;
     background-color: #FF1493;
 }
+.error {
+    border: 2px solid red;
+}
 @media screen and (max-width: 991px) {
     body {
         font-size: 40px;
