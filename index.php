@@ -41,7 +41,6 @@ foreach ($_POST['abilities'] as $ability) {
   print('Выберите сверхспособности.<br/>');
   $errors = TRUE;
 }
-}
 
 if (empty($_POST['biography'])) {
   print('Заполните биографию.<br/>');
