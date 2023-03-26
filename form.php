@@ -34,9 +34,9 @@
     <label>
         Сверхспособности:<br>
         <select id="data" name="abilities[]" multiple="multiple">
-          <option value="10">Бессмертие</option>
-          <option value="20">Прохождение сквозь стены</option>
-          <option value="30">Левитация</option>
+          <option value="Бессмертие">Бессмертие</option>
+          <option value="Прохождение сквозь стены">Прохождение сквозь стены</option>
+          <option value="Левитация">Левитация</option>
         </select>
     </label><br>
     <label>
