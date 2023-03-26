@@ -89,7 +89,13 @@ try {
   foreach ($_POST['abilities'] as $ability) {
   //try {
   //$stmt = $db->prepare("INSERT INTO link SET app_id = ?, ab_id = ?");
-  $stmt -> execute([$app_id, $ability]);
+    
+    if ($ability=='Бессмертие')
+    {$stmt -> execute([$app_id, 10]);}
+    else if ($ability=='Прохождение сквозь стены')
+    {$stmt -> execute([$app_id, 20]);}
+    else if ($ability=='Бессмертие')
+    {$stmt -> execute([$app_id, 30]);}
   }
 }
 catch(PDOException $e) {
