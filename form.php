@@ -27,7 +27,7 @@ if (!empty($messages)) {
         Дата рождения:<br>
          <select id="data" name="birth_date" <?php if ($errors['birth_date']) {print 'class="error"';} ?> >
          <?php  
-                 $birthdate=<?php print $values['birth_date']; ?>;
+                 $birthdate=$values['birth_date'];
                  if ($values['birth_date']=='') {
                          for ($i = 1922; $i <= 2022; $i++) {
                             printf('<option value="%d">%d год</option>', $i, $i);
