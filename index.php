@@ -35,10 +35,16 @@ if (empty($_POST['amount_of_limbs']) || !is_numeric($_POST['amount_of_limbs']) |
   $errors = TRUE;
 }
 
-if (empty($_POST['abilities']) || !($_POST['abilities']==['Бессмертие','Прохождение сквозь стены','Левитация'])) {
 //if (empty($_POST['abilities']) || !($_POST['abilities']=='Бессмертие' || $_POST['abilities']=='Прохождение сквозь стены' || $_POST['abilities']=='Левитация')) {
+if (empty($_POST['abilities'])) {
   print('Выберите сверхспособности.<br/>');
   $errors = TRUE;
+}
+foreach ($_POST['abilities'] as $ability) {
+  if (!($ability=='Бессмертие' || $ability=='Прохождение сквозь стены' || $ability=='Левитация')) {
+    print('Выберите сверхспособности.<br/>');
+    $errors = TRUE;
+  }
 }
 
 if (empty($_POST['biography'])) {
