@@ -115,11 +115,19 @@ else {
   else {
     setcookie('amountOfLimbs_value', $_POST['amount_of_limbs'], time() + 30 * 24 * 60 * 60);
   }
-  if (empty($_POST['abilities'])) {
+  $abilities = [10 => 'Бессмертие', 20 => '', 30 => ''];
+  if (empty($_POST['abilities']) || !is_array($_POST['abilities'])) {
     setcookie('abilities_error', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
   }
   else {
+    foreach ($_POST['abilities'] as $ability) {
+      if (!in_array($ability, $abilities)) {
+        setcookie('abilities_error', '1', time() + 24 * 60 * 60);
+        $errors = TRUE;
+        break;
+      }
+    }
     setcookie('abilities_value', $_POST['abilities'], time() + 30 * 24 * 60 * 60);
   }
   if (empty($_POST['biography'])) {
