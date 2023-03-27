@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     // Удаляем куку, указывая время устаревания в прошлом.
     setcookie('name_error', '', 100000);
     // Выводим сообщение.
-    $messages[] = '<div class="error">Введите имя.</div>';
+    $messages[] = '<div class="error">Введите имя корректно.</div>';
   }
   if ($errors['email']) {
     setcookie('email_error', '', 100000);
