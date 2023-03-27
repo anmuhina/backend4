@@ -115,7 +115,8 @@ else {
   else {
     setcookie('amountOfLimbs_value', $_POST['amount_of_limbs'], time() + 30 * 24 * 60 * 60);
   }
-  $abilities = [10 => 'Бессмертие', 20 => '', 30 => ''];
+  
+  $abilities = [10 => 'Бессмертие', 20 => 'Прохождение сквозь стены', 30 => 'Левитация'];
   if (empty($_POST['abilities']) || !is_array($_POST['abilities'])) {
     setcookie('abilities_error', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
