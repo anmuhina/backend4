@@ -104,7 +104,7 @@ if (!empty($messages)) {
                 else {
                         foreach ($values['abilities'] as $ability) {
                                 
-                                if ($ability=='Бессмертие') {
+                                /*if ($ability=='Бессмертие') {
                                         print('<option value="Бессмертие" selected="selected">Бессмертие</option>
                                         <option value="Прохождение сквозь стены">Прохождение сквозь стены</option>
                                         <option value="Левитация">Левитация</option>');
@@ -118,7 +118,7 @@ if (!empty($messages)) {
                                         print('<option value="Бессмертие">Бессмертие</option>
                                         <option value="Прохождение сквозь стены">Прохождение сквозь стены</option>
                                         <option value="Левитация" selected="selected">Левитация</option>');
-                                }
+                                }*/
                         }
                     //<option value="Бессмертие">Бессмертие</option>
                     //<option value="Прохождение сквозь стены">Прохождение сквозь стены</option>
@@ -129,7 +129,7 @@ if (!empty($messages)) {
     </label><br>
     <label>
         Биография:<br />
-        <textarea id="data" name="biography" placeholder="Введите текст"></textarea>
+        <textarea id="data" name="biography" placeholder="Введите текст" <?php if ($errors['biography']) {print 'class="error"';} ?> > <?php print $values['biography'] ?> </textarea>
     </label><br>
     <label><input id="data" type="checkbox" name="informed">С контрактом ознакомлен(а)</label><br>
     <input id="sub" type="submit" value="Отправить">
