@@ -130,17 +130,17 @@ if (!empty($messages)) {
     <label>
             
         Биография:<br />
-        <!--<textarea id="data" name="biography" placeholder="Введите текст" <?php if ($errors['biography']) {print 'class="error"';} ?> > <?php print $values['biography'] ?> </textarea>-->
-            <div <?php if ($errors['biography']) {print 'class="error"';} ?> >
+        <textarea id="data" name="biography" placeholder="Введите текст" <?php if ($errors['biography']) {print 'class="error"';} ?> > <?php print $values['biography'] ?> </textarea>
+            <!--<div <?php if ($errors['biography']) {print 'class="error"';} ?> >
                 <?php
                 if ($values['biography']=='') {
                         print('<textarea id="data" name="biography" placeholder="Введите текст"></textarea>');
                 }
                     else {
-                            printf('<textarea id="data" name="biography" placeholder="Введите текст"> %d </textarea>', $values['biography']);
+                            printf('<textarea id="data" name="biography"> %d </textarea>', $values['biography']);
                     }
                 ?>
-            </div>
+            </div>-->
             
         </label><br>
     <label><input id="data" type="checkbox" name="informed">С контрактом ознакомлен(а)</label><br>
