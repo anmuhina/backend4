@@ -47,17 +47,20 @@ if (!empty($messages)) {
         <div <?php if ($errors['sex']) {print 'class="error"';} ?> >
         <?php
                 if ($values['sex']=='') {
-                           print ('<label><input id="data" type="radio" name="sex" value="ж">Ж</label>');
-                           print ('<label><input id="data" type="radio" name="sex" value="м">М</label><br />');    
+                           print ('<label><input id="data" type="radio" name="sex" value="ж">Ж</label> <label><input id="data" type="radio" name="sex" value="м">М</label>');
+                           //print ('<label><input id="data" type="radio" name="sex" value="ж">Ж</label>');
+                           //print ('<label><input id="data" type="radio" name="sex" value="м">М</label><br />');    
                 }
                 else {
                         if ($values['sex']=='м') {
-                                 print ('<label><input id="data" type="radio" name="sex" value="ж">Ж</label>');
-                                print ('<label><input id="data" type="radio" name="sex" value="м" checked="checked">М</label><br />');
+                                print ('<label><input id="data" type="radio" name="sex" value="ж">Ж</label> <label><input id="data" type="radio" name="sex" value="м" checked="checked">М</label>');
+                                //print ('<label><input id="data" type="radio" name="sex" value="ж">Ж</label>');
+                                //print ('<label><input id="data" type="radio" name="sex" value="м" checked="checked">М</label><br />');
                         }
                         else {
-                                print ('<label><input id="data" type="radio" name="sex" value="ж" checked="checked">Ж</label><br />');
-                                print ('<label><input id="data" type="radio" name="sex" value="м">М</label><br />');
+                                print ('<label><input id="data" type="radio" name="sex" value="ж" checked="checked">Ж</label> <label><input id="data" type="radio" name="sex" value="м">М</label>');
+                                //print ('<label><input id="data" type="radio" name="sex" value="ж" checked="checked">Ж</label><br />');
+                                //print ('<label><input id="data" type="radio" name="sex" value="м">М</label><br />');
                         }
                 }
      
@@ -65,9 +68,33 @@ if (!empty($messages)) {
         </div>
         
     Количество конечностей:<br />
-      <label><input id="data" type="radio" name="amount_of_limbs" value="2"> 2 </label>
-      <label><input id="data" type="radio" name="amount_of_limbs" value="3"> 3 </label>
-      <label><input id="data" type="radio" name="amount_of_limbs" value="4"> 4 </label><br>
+        <div <?php if ($errors['amount_of_limbs']) {print 'class="error"';} ?> >
+                <?php
+                if ($values['amount_of_limbs']=='') {
+                        print ('<label><input id="data" type="radio" name="amount_of_limbs" value="2"> 2 </label>');
+                        print ('<label><input id="data" type="radio" name="amount_of_limbs" value="3"> 3 </label>');
+                        print ('<label><input id="data" type="radio" name="amount_of_limbs" value="4"> 4 </label><br>');
+                }
+                else {
+                        if ($values['amount_of_limbs']=='2') {
+                               print ('<label><input id="data" type="radio" name="amount_of_limbs" checked="checked" value="2"> 2 </label>');
+                               print ('<label><input id="data" type="radio" name="amount_of_limbs" value="3"> 3 </label>');
+                               print ('<label><input id="data" type="radio" name="amount_of_limbs" value="4"> 4 </label><br>');
+                        }
+                        else if ($values['amount_of_limbs']=='3') {
+                               print ('<label><input id="data" type="radio" name="amount_of_limbs" value="2"> 2 </label>');
+                               print ('<label><input id="data" type="radio" name="amount_of_limbs" checked="checked" value="3"> 3 </label>');
+                               print ('<label><input id="data" type="radio" name="amount_of_limbs" value="4"> 4 </label><br>');
+                        }
+                        else {
+                               print ('<label><input id="data" type="radio" name="amount_of_limbs" value="2"> 2 </label>');
+                               print ('<label><input id="data" type="radio" name="amount_of_limbs" value="3"> 3 </label>');
+                               print ('<label><input id="data" type="radio" name="amount_of_limbs" checked="checked" value="4"> 4 </label><br>');
+                        }
+                } 
+                ?>
+        </div>
+        
     <label>
         Сверхспособности:<br>
         <select id="data" name="abilities[]" multiple="multiple">
