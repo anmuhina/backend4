@@ -104,19 +104,19 @@ if (!empty($messages)) {
                 else {
                         foreach ($values['abilities'] as $ability) {
                                 if ($ability=='Бессмертие') {
-                                        print('<option value="Бессмертие" checked="checked">Бессмертие</option>
+                                        print('<option value="Бессмертие" selected="selected">Бессмертие</option>
                                         <option value="Прохождение сквозь стены">Прохождение сквозь стены</option>
                                         <option value="Левитация">Левитация</option>');
                                 }
                                 if ($ability=='Прохождение сквозь стены') {
                                         print('<option value="Бессмертие">Бессмертие</option>
-                                        <option value="Прохождение сквозь стены" checked="checked">Прохождение сквозь стены</option>
+                                        <option value="Прохождение сквозь стены" selected="selected">Прохождение сквозь стены</option>
                                         <option value="Левитация">Левитация</option>');
                                 }
                                 if ($ability=='Левитация') {
                                         print('<option value="Бессмертие">Бессмертие</option>
                                         <option value="Прохождение сквозь стены">Прохождение сквозь стены</option>
-                                        <option value="Левитация" checked="checked">Левитация</option>');
+                                        <option value="Левитация" selected="selected">Левитация</option>');
                                 }
                         }
                     //<option value="Бессмертие">Бессмертие</option>
