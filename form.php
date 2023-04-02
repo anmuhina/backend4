@@ -47,20 +47,17 @@ if (!empty($messages)) {
         <div <?php if ($errors['sex']) {print 'class="error"';} ?> >
         <?php
                 if ($values['sex']=='') {
-                           print ('<label><input id="data" type="radio" name="sex" value="ж">Ж</label> <label><input id="data" type="radio" name="sex" value="м">М</label>');
-                           //print ('<label><input id="data" type="radio" name="sex" value="ж">Ж</label>');
-                           //print ('<label><input id="data" type="radio" name="sex" value="м">М</label><br />');    
+                           print ('<label><input id="data" type="radio" name="sex" value="ж">Ж</label> 
+                           <label><input id="data" type="radio" name="sex" value="м">М</label><br>');
                 }
                 else {
                         if ($values['sex']=='м') {
-                                print ('<label><input id="data" type="radio" name="sex" value="ж">Ж</label> <label><input id="data" type="radio" name="sex" value="м" checked="checked">М</label>');
-                                //print ('<label><input id="data" type="radio" name="sex" value="ж">Ж</label>');
-                                //print ('<label><input id="data" type="radio" name="sex" value="м" checked="checked">М</label><br />');
+                                print ('<label><input id="data" type="radio" name="sex" value="ж">Ж</label> 
+                                <label><input id="data" type="radio" name="sex" value="м" checked="checked">М</label><br>');
                         }
                         else {
-                                print ('<label><input id="data" type="radio" name="sex" value="ж" checked="checked">Ж</label> <label><input id="data" type="radio" name="sex" value="м">М</label>');
-                                //print ('<label><input id="data" type="radio" name="sex" value="ж" checked="checked">Ж</label><br />');
-                                //print ('<label><input id="data" type="radio" name="sex" value="м">М</label><br />');
+                                print ('<label><input id="data" type="radio" name="sex" value="ж" checked="checked">Ж</label> 
+                                <label><input id="data" type="radio" name="sex" value="м">М</label><br>');
                         }
                 }
      
@@ -71,25 +68,25 @@ if (!empty($messages)) {
         <div <?php if ($errors['amount_of_limbs']) {print 'class="error"';} ?> >
                 <?php
                 if ($values['amount_of_limbs']=='') {
-                        print ('<label><input id="data" type="radio" name="amount_of_limbs" value="2"> 2 </label>');
-                        print ('<label><input id="data" type="radio" name="amount_of_limbs" value="3"> 3 </label>');
-                        print ('<label><input id="data" type="radio" name="amount_of_limbs" value="4"> 4 </label><br>');
+                        print ('<label><input id="data" type="radio" name="amount_of_limbs" value="2"> 2 </label>
+                        <label><input id="data" type="radio" name="amount_of_limbs" value="3"> 3 </label>
+                        <label><input id="data" type="radio" name="amount_of_limbs" value="4"> 4 </label><br>');
                 }
                 else {
                         if ($values['amount_of_limbs']=='2') {
-                               print ('<label><input id="data" type="radio" name="amount_of_limbs" checked="checked" value="2"> 2 </label>');
-                               print ('<label><input id="data" type="radio" name="amount_of_limbs" value="3"> 3 </label>');
-                               print ('<label><input id="data" type="radio" name="amount_of_limbs" value="4"> 4 </label><br>');
+                               print ('<label><input id="data" type="radio" name="amount_of_limbs" checked="checked" value="2"> 2 </label>
+                               <label><input id="data" type="radio" name="amount_of_limbs" value="3"> 3 </label>
+                               <label><input id="data" type="radio" name="amount_of_limbs" value="4"> 4 </label><br>');
                         }
                         else if ($values['amount_of_limbs']=='3') {
-                               print ('<label><input id="data" type="radio" name="amount_of_limbs" value="2"> 2 </label>');
-                               print ('<label><input id="data" type="radio" name="amount_of_limbs" checked="checked" value="3"> 3 </label>');
-                               print ('<label><input id="data" type="radio" name="amount_of_limbs" value="4"> 4 </label><br>');
+                               print ('<label><input id="data" type="radio" name="amount_of_limbs" value="2"> 2 </label>
+                               <label><input id="data" type="radio" name="amount_of_limbs" checked="checked" value="3"> 3 </label>
+                               <label><input id="data" type="radio" name="amount_of_limbs" value="4"> 4 </label><br>');
                         }
                         else {
-                               print ('<label><input id="data" type="radio" name="amount_of_limbs" value="2"> 2 </label>');
-                               print ('<label><input id="data" type="radio" name="amount_of_limbs" value="3"> 3 </label>');
-                               print ('<label><input id="data" type="radio" name="amount_of_limbs" checked="checked" value="4"> 4 </label><br>');
+                               print ('<label><input id="data" type="radio" name="amount_of_limbs" value="2"> 2 </label>
+                               <label><input id="data" type="radio" name="amount_of_limbs" value="3"> 3 </label>
+                               <label><input id="data" type="radio" name="amount_of_limbs" checked="checked" value="4"> 4 </label><br>');
                         }
                 } 
                 ?>
@@ -97,10 +94,36 @@ if (!empty($messages)) {
         
     <label>
         Сверхспособности:<br>
-        <select id="data" name="abilities[]" multiple="multiple">
-          <option value="Бессмертие">Бессмертие</option>
-          <option value="Прохождение сквозь стены">Прохождение сквозь стены</option>
-          <option value="Левитация">Левитация</option>
+        <select id="data" name="abilities[]" multiple="multiple" <?php if ($errors['abilities']) {print 'class="error"';} ?> >
+                <?php
+                if ($values['abilities']=='') {
+                        print ('<option value="Бессмертие">Бессмертие</option>
+                        <option value="Прохождение сквозь стены">Прохождение сквозь стены</option>
+                        <option value="Левитация">Левитация</option>');
+                }
+                else {
+                        foreach ($values['abilities'] as $ability) {
+                                if ($ability=='Бессмертие') {
+                                        print('<option value="Бессмертие" checked="checked">Бессмертие</option>
+                                        <option value="Прохождение сквозь стены">Прохождение сквозь стены</option>
+                                        <option value="Левитация">Левитация</option>');
+                                }
+                                if ($ability=='Прохождение сквозь стены') {
+                                        print('<option value="Бессмертие">Бессмертие</option>
+                                        <option value="Прохождение сквозь стены" checked="checked">Прохождение сквозь стены</option>
+                                        <option value="Левитация">Левитация</option>');
+                                }
+                                if ($ability=='Левитация') {
+                                        print('<option value="Бессмертие">Бессмертие</option>
+                                        <option value="Прохождение сквозь стены">Прохождение сквозь стены</option>
+                                        <option value="Левитация" checked="checked">Левитация</option>');
+                                }
+                        }
+                    //<option value="Бессмертие">Бессмертие</option>
+                    //<option value="Прохождение сквозь стены">Прохождение сквозь стены</option>
+                    //<option value="Левитация">Левитация</option>
+                }
+                ?>
         </select>
     </label><br>
     <label>
