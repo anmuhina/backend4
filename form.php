@@ -133,7 +133,7 @@ if (!empty($messages)) {
         <!--<textarea id="data" name="biography" placeholder="Введите текст" <?php if ($errors['biography']) {print 'class="error"';} ?> > <?php print $values['biography'] ?> </textarea>-->
             <div <?php if ($errors['biography']) {print 'class="error"';} ?> >
                 <?php
-                if (!isset($values['biography'])) {
+                if (!($values['biography'])) {
                         print('<textarea id="data" name="biography" placeholder="Введите текст"></textarea>');
                 }
                     else {
