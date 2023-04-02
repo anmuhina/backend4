@@ -137,7 +137,8 @@ if (!empty($messages)) {
                         print('<textarea id="data" name="biography" placeholder="Введите текст"></textarea>');
                 }
                     else {
-                            print('<textarea id="data" name="biography" placeholder="Введите текст">$values['biography']</textarea>');
+                            $bio=$values['biography'];
+                            printf('<textarea id="data" name="biography"> %d </textarea>', $bio);
                     }
                 ?>
             </div>
