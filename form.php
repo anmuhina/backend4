@@ -128,9 +128,21 @@ if (!empty($messages)) {
         </select>
     </label><br>
     <label>
+            
         Биография:<br />
-        <textarea id="data" name="biography" placeholder="Введите текст" <?php if ($errors['biography']) {print 'class="error"';} ?> > <?php print $values['biography'] ?> </textarea>
-    </label><br>
+        //<textarea id="data" name="biography" placeholder="Введите текст" <?php if ($errors['biography']) {print 'class="error"';} ?> > <?php print $values['biography'] ?> </textarea>
+            <div <?php if ($errors['biography']) {print 'class="error"';} ?> >
+                <?php
+                if ($values['biography']=='') {
+                        print('<textarea id="data" name="biography" placeholder="Введите текст"></textarea>');
+                }
+                    else {
+                            print('<textarea id="data" name="biography" placeholder="Введите текст">$values['biography']</textarea>');
+                    }
+                ?>
+            </div>
+            
+        </label><br>
     <label><input id="data" type="checkbox" name="informed">С контрактом ознакомлен(а)</label><br>
     <input id="sub" type="submit" value="Отправить">
   </form>
