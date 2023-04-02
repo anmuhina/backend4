@@ -127,23 +127,23 @@ if (!empty($messages)) {
                 ?>
         </select>
     </label><br>
+        
     <label>
-            
         Биография:<br />
-        <textarea id="data" name="biography" placeholder="Введите текст" <?php if ($errors['biography']) {print 'class="error"';} ?> > <?php print $values['biography'] ?> </textarea>
-            <!--<div <?php if ($errors['biography']) {print 'class="error"';} ?> >
-                <?php
-                if ($values['biography']=='') {
-                        print('<textarea id="data" name="biography" placeholder="Введите текст"></textarea>');
-                }
-                    else {
-                            printf('<textarea id="data" name="biography"> %d </textarea>', $values['biography']);
-                    }
-                ?>
-            </div>-->
-            
+        <textarea id="data" name="biography" placeholder="Введите текст" <?php if ($errors['biography']) {print 'class="error"';} ?> > <?php print $values['biography'] ?> </textarea>  
         </label><br>
-    <label><input id="data" type="checkbox" name="informed">С контрактом ознакомлен(а)</label><br>
+        
+        <div <?php if ($errors['informed']) {print 'class="error"';} ?> >
+                <?php
+                if ($values['informed']=='') {
+                        print('<label><input id="data" type="checkbox" name="informed">С контрактом ознакомлен(а)</label><br>');
+                }
+                else {
+                        print('<label><input id="data" type="checkbox" name="informed" checked="checked">С контрактом ознакомлен(а)</label><br>');
+                }
+                ?>
+        </div>
+        
     <input id="sub" type="submit" value="Отправить">
   </form>
 </body>
