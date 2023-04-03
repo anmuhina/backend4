@@ -96,33 +96,17 @@ if (!empty($messages)) {
         Сверхспособности:<br>
         <select id="data" name="abilities[]" multiple="multiple" <?php if ($errors['abilities']) {print 'class="error"';} ?> >
                 <?php
-                if (empty($values['abilities'])) {
+                if (empty($values['abilities']) || !is_array($values['abilities'])) {
                         print ('<option value="Бессмертие">Бессмертие</option>
                         <option value="Прохождение сквозь стены">Прохождение сквозь стены</option>
                         <option value="Левитация">Левитация</option>');
                 }
                 else {
-                        foreach ($values['abilities'] as $ability) {
-                                
-                                /*if ($ability=='Бессмертие') {
-                                        print('<option value="Бессмертие" selected="selected">Бессмертие</option>
-                                        <option value="Прохождение сквозь стены">Прохождение сквозь стены</option>
-                                        <option value="Левитация">Левитация</option>');
-                                }
-                                if ($ability=='Прохождение сквозь стены') {
-                                        print('<option value="Бессмертие">Бессмертие</option>
-                                        <option value="Прохождение сквозь стены" selected="selected">Прохождение сквозь стены</option>
-                                        <option value="Левитация">Левитация</option>');
-                                }
-                                if ($ability=='Левитация') {
-                                        print('<option value="Бессмертие">Бессмертие</option>
-                                        <option value="Прохождение сквозь стены">Прохождение сквозь стены</option>
-                                        <option value="Левитация" selected="selected">Левитация</option>');
-                                }*/
-                        }
-                    //<option value="Бессмертие">Бессмертие</option>
-                    //<option value="Прохождение сквозь стены">Прохождение сквозь стены</option>
-                    //<option value="Левитация">Левитация</option>
+                ?>
+                <option value="Бессмертие" <?php if (in_array('Бессмертие', $values['abilities'])) {print('selected="selected"');} ?>>Бессмертие</option>
+                <option value="Прохождение сквозь стены" <?php if (in_array('Прохождение сквозь стены', $values['abilities'])) {print('selected="selected"');} ?>>Прохождение сквозь стены</option>
+                <option value="Левитация" <?php if (in_array('Левитация', $values['abilities'])) {print('selected="selected"');} ?>>Левитация</option>;
+                <?php
                 }
                 ?>
         </select>
