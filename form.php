@@ -60,7 +60,7 @@ if (!empty($messages)) {
                 ?>
                 
                 
-                /*if ($values['sex']=='') {
+                <!--if ($values['sex']=='') {
                            print ('<label><input id="data" type="radio" name="sex" value="ж">Ж</label> 
                            <label><input id="data" type="radio" name="sex" value="м">М</label><br>');
                 }
@@ -73,7 +73,7 @@ if (!empty($messages)) {
                                 print ('<label><input id="data" type="radio" name="sex" value="ж" checked="checked">Ж</label> 
                                 <label><input id="data" type="radio" name="sex" value="м">М</label><br>');
                         }
-                }*/
+                }-->
      
         ?>
         </div>
