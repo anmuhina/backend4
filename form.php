@@ -58,24 +58,6 @@ if (!empty($messages)) {
                 <?php        
                 }
                 ?>
-                
-                
-                <!--if ($values['sex']=='') {
-                           print ('<label><input id="data" type="radio" name="sex" value="ж">Ж</label> 
-                           <label><input id="data" type="radio" name="sex" value="м">М</label><br>');
-                }
-                else {
-                        if ($values['sex']=='м') {
-                                print ('<label><input id="data" type="radio" name="sex" value="ж">Ж</label> 
-                                <label><input id="data" type="radio" name="sex" value="м" checked="checked">М</label><br>');
-                        }
-                        else {
-                                print ('<label><input id="data" type="radio" name="sex" value="ж" checked="checked">Ж</label> 
-                                <label><input id="data" type="radio" name="sex" value="м">М</label><br>');
-                        }
-                }-->
-     
-        ?>
         </div>
         
     Количество конечностей:<br />
@@ -87,7 +69,12 @@ if (!empty($messages)) {
                         <label><input id="data" type="radio" name="amount_of_limbs" value="4"> 4 </label><br>');
                 }
                 else {
-                        if ($values['amount_of_limbs']=='2') {
+                        ?>
+                        <label><input id="data" type="radio" name="amount_of_limbs" value="2" <?php if ($values['amount_of_limbs']==2) print('checked="checked"'); ?> > 2 </label>
+                        <label><input id="data" type="radio" name="amount_of_limbs" value="3" <?php if ($values['amount_of_limbs']==3) print('checked="checked"'); ?> > 3 </label>
+                        <label><input id="data" type="radio" name="amount_of_limbs" value="4" <?php if ($values['amount_of_limbs']==4) print('checked="checked"'); ?> > 4 </label><br>
+                
+                        <!--if ($values['amount_of_limbs']=='2') {
                                print ('<label><input id="data" type="radio" name="amount_of_limbs" checked="checked" value="2"> 2 </label>
                                <label><input id="data" type="radio" name="amount_of_limbs" value="3"> 3 </label>
                                <label><input id="data" type="radio" name="amount_of_limbs" value="4"> 4 </label><br>');
@@ -101,7 +88,9 @@ if (!empty($messages)) {
                                print ('<label><input id="data" type="radio" name="amount_of_limbs" value="2"> 2 </label>
                                <label><input id="data" type="radio" name="amount_of_limbs" value="3"> 3 </label>
                                <label><input id="data" type="radio" name="amount_of_limbs" checked="checked" value="4"> 4 </label><br>');
-                        }
+                        }-->
+                
+                <?php
                 } 
                 ?>
         </div>
