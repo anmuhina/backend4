@@ -122,7 +122,7 @@ if (!empty($messages)) {
         
         <div <?php if ($errors['informed']) {print 'class="error"';} ?> >
                 <?php
-                if ($values['informed']=='' ||  !($_POST['informed'] == 'on') ) {
+                if ($values['informed']=='' ||  !($values['informed'] == 'on') ) {
                         print('<label><input id="data" type="checkbox" name="informed">С контрактом ознакомлен(а)</label><br>');
                 }
                 else {
