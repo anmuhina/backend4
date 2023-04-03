@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   $values['birth_date'] = empty($_COOKIE['birthDate_value']) ? '' : $_COOKIE['birthDate_value'];
   $values['sex'] = empty($_COOKIE['sex_value']) ? '' : $_COOKIE['sex_value'];
   $values['amount_of_limbs'] = empty($_COOKIE['amountOfLimbs_value']) ? '' : $_COOKIE['amountOfLimbs_value'];
-  $values['abilities'] = empty($_COOKIE['abilities_value']) ? '' : $_COOKIE['abilities_value'];
+  $values['abilities'] = empty($_COOKIE['abilities_value']) ? '' : unserialize($_COOKIE['abilities_value']);
   $values['biography'] = empty($_COOKIE['biography_value']) ? '' : $_COOKIE['biography_value'];
   $values['informed'] = empty($_COOKIE['informed_value']) ? '' : $_COOKIE['informed_value'];
   
@@ -129,7 +129,7 @@ else {
         break;
       }
     }
-    setcookie('abilities_value', $_POST['abilities'], time() + 30 * 24 * 60 * 60);
+    setcookie('abilities_value', serialize($_POST['abilities']), time() + 30 * 24 * 60 * 60);
   }
   if (empty($_POST['biography'])) {
     setcookie('biography_error', '1', time() + 24 * 60 * 60);
