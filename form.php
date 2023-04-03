@@ -46,7 +46,21 @@ if (!empty($messages)) {
     Пол:<br>
         <div <?php if ($errors['sex']) {print 'class="error"';} ?> >
         <?php
+             
                 if ($values['sex']=='') {
+                           print ('<label><input id="data" type="radio" name="sex" value="ж">Ж</label> 
+                           <label><input id="data" type="radio" name="sex" value="м">М</label><br>');
+                }
+                else {
+                ?>
+                  <label><input id="data" type="radio" name="sex" value="ж" <?php if ($values['sex']=='ж') print('checked="checked"'); ?> >Ж</label> 
+                  <label><input id="data" type="radio" name="sex" value="м" <?php if ($values['sex']=='м') print('checked="checked"'); ?> >М</label><br>
+                <?php        
+                }
+                ?>
+                
+                
+                /*if ($values['sex']=='') {
                            print ('<label><input id="data" type="radio" name="sex" value="ж">Ж</label> 
                            <label><input id="data" type="radio" name="sex" value="м">М</label><br>');
                 }
@@ -59,7 +73,7 @@ if (!empty($messages)) {
                                 print ('<label><input id="data" type="radio" name="sex" value="ж" checked="checked">Ж</label> 
                                 <label><input id="data" type="radio" name="sex" value="м">М</label><br>');
                         }
-                }
+                }*/
      
         ?>
         </div>
